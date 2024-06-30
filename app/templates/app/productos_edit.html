@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h2>Modificar formulario CRUD para productos</h2>
+        <form action="{% url 'productos_edit_form' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <pre for = 'txtid'>id_producto:            <input type="text" name="txtid" value="{{prod.id_producto}}" readonly></pre>
+            <pre>nombre_producto:                      <input type="text" name="txtnombre" value="{{prod.nombre_producto}}"></pre>
+            <pre>fecha_vencimiento:                    <input type="text" name="txtfecha" value="{{prod.fecha_vencimiento}}"></pre>
+            <pre>cantidad_producto:                    <input type="text" name="txtcantidad" value="{{prod.cantidad_producto}}"></pre>
+            <pre>marca:                                <input type="text" name="txtMarca" value="{{prod.Marca}}"></pre>
+            <pre>activo:                               <input type="text" name="txtactivo" value="{{prod.activo}}"></pre>
+
+            <input type="submit" name="btn" value="Editar">
+        </form>
+
+        <a href="{% url 'productos_list' %}">Volver</a>
+    </div>
+
+    
+</body>
+</html>

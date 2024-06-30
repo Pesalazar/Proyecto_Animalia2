@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Formulario CRUD para productos</h2>
+        <form action="productos_add" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <pre for = 'txtid'>id_producto:            <input type="text" name="txtid" ></pre>
+            <pre class="productosadd">nombre_producto:        <input type="text" name="txtnombre"></pre>
+            <pre class="productosadd">fecha_vencimiento:      <input type="text" name="txtfecha"></pre>
+            <pre class="productosadd">cantidad_producto:      <input type="text" name="txtcantidad"></pre>
+            <pre class="productosadd">marca:                  <input type="text" name="txtMarca"></pre>
+            <pre class="productosadd">activo:                 <input type="text" name="txtactivo"></pre>
+
+            <input type="submit" name="btn" value="Agregar" class="productosadd">
+        </form>
+
+        <a href="{% url 'productos_list' %}">Volver</a>
+    </div>
+    
+</body>
+</html>

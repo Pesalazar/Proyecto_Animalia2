@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Editar Datos de Productos</h1>
+    <br>
+
+
+
+    <div id="idMensajes">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+
+    <table>
+        {% if productos %}
+            <th> |ID|</th>
+            <th> |DESC_PRODUCTO|</th>
+            <th> |CANT_PRODUCTO|</th>
+            <th> |ELIMINAR|</th>
+            <th> |MODIFICAR|</th>
+            {% for x in productos %}
+                <tr>
+                    <td>{{x.id_producto}}</td>
+                    <td>{{x.nombre_producto}}</td>
+                    <td>{{x.cantidad_producto}}</td>
+                    <td><a href="productos_del/{{x.id_producto}}">Eliminar</a></td>
+                    <td><a href="productos_edit/{{x.id_producto}}">Modificar</a></td>
+                </tr>
+                {% endfor %}
+        {% endif %}
+    </table>
+
+    <br>
+
+    <button type="button">
+        <a href="{% url 'productos_add_vistas' %}"> Agregar</a>
+    </button>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> H>ola</h1>
+
+    {%for producto in productos %}
+
+        {{producto.id_producto}}, {{producto.nombre_producto}},{{producto.fecha_vencimiento}},
+        {{producto.cantidad_producto}}, {{producto.Marca}} <br>
+
+
+    {% endfor %}
+    
+    
+</body>
+</html>
